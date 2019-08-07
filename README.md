@@ -39,6 +39,7 @@ Planned enhancements include (in no particular order)
 * Bumpers for increased ruggedness
 * Sturdier versions of the drawers for increased ruggedness
 * Custom label inserts 
+* Bosses and recesses to aid in stacking units
 
 ## More information
 You may find additional information, discussion, and resources at 

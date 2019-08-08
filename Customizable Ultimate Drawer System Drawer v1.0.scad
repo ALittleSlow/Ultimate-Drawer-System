@@ -32,11 +32,11 @@ U_high=3; // [1:15]
 
 /* [Features] */
 // What kind of drawer pull?
-pull_style = "original"; // ["original", "ergonomic"]
+pull_style = "original"; // [original, ergonomic]
 // modify the flange to allow for the drawer catch on the shelf?
-drawer_catch = "no"; // ["yes", "no"]
+drawer_catch = "no"; // [yes, no]
 // include slots on the back of the drawer for the locking mechanism
-rear_lock_slot = "no"; // ["yes", "no"]
+rear_lock_slot = "no"; // [yes, no]
 
 /* [Hidden] */
 drawerUnit=[120, 120, 19];

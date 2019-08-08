@@ -38,10 +38,11 @@ Planned enhancements include (in no particular order)
 * Custom inserts for specialty storage
 * Bumpers for increased ruggedness
 * Sturdier versions of the drawers for increased ruggedness
-* Custom label inserts 
+* Custom label inserts
 * Bosses and recesses to aid in stacking units
 
 ## More information
-You may find additional information, discussion, and resources at 
-* https://www.thingiverse.com/thing:2302575
-
+You may find additional information, discussion, and resources at
+* (Thingiverse drawer)[https://www.thingiverse.com/thing:2302575]
+* (Thingiverse shelf)[https://www.thingiverse.com/thing:3796410]
+* (Thingiverse MarcElbichon version)[https://www.thingiverse.com/thing:2302575]

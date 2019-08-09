@@ -21,6 +21,8 @@
  * Maintain backwards compatibility with MarcElbichon's Ultimate Drawer System 
    (https://www.thingiverse.com/thing:2302575). This means a 1Ux1Ux1U drawer 
    made with this program will work in MarcElbichon's shelf. 
+ * Whereas normally an "include" file would handle parameters that are reused among code, 
+   Customizer can't handle that. Instead we'll have to manually paste in the include file whenever it changes.
 */
 
 // Walls are 5 mm (W_t). Slots are 20 mm apart. 0.5 mm gap (g) between side wall and drawer. 

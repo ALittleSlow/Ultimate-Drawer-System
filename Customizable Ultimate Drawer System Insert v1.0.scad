@@ -25,23 +25,25 @@
 */
 
 /* [Size] */
-// mm wide (1U drawer is 118 mm inside, 1.5U is 182.5 mm, 2U is 249 mm)
+// Outside width in mm (1U drawer is 118 mm inside, 1.5U is 182.5 mm, 2U is 249 mm)
 Width=59; // [8:0.5:249]
-// mm deep (1U drawer is 118 mm inside, 1.5U is 182 mm, 2U is 248 mm)
+// Outside depth in mm (1U drawer is 118 mm inside, 1.5U is 182 mm, 2U is 248 mm)
 Depth=59; // [8:248]
-// mm high (1U drawer is 18 mm inside, 2U is 28 mm, 3U is 38 mm, etc.)
+// Outside height in mm (1U drawer is 18 mm inside, 2U is 38 mm, 3U is 58 mm, etc.)
 Height= 18; // [8:398]
+// This amount is subtracted from each of the six sides to provide some wiggle room. Half your nozzle diameter is a good place to start if you're not sure.
+Tolerance=0.2; // [0.00:0.02:1.00]
 
 /* [Hidden] */
 drawerWallThickness = 1; // assumed
 drawerCornerRadius = 4; // assumed
 insertWallThickness = 1;
 insertCornerRadius = drawerCornerRadius; 
-insertSize = [Width, Depth, Height];
+insertSize = [Width - Tolerance*2, Depth - Tolerance*2, Height - Tolerance*2];
 
 // utility variables
 epsilon = 0.01;
-$fn=16;
+$fn=24;
 
 module insert() {
     module add() {

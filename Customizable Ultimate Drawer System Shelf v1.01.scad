@@ -4,6 +4,12 @@
 // Licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0) and
 // sharable under the GPLv3.
 
+/* Release Notes
+ * Version 1.01 - bugfix release
+ * Fix bug in clips where variable was undefined
+ * Remove non-functional "retaining clip" parameter
+ */ 
+
 /* Design notes
 // width is x dimension, across the face of the drawer
 // depth is y dimension, front to back of the drawer
@@ -46,8 +52,6 @@ U_Deep=1; //[1,1.5,2]
 /* [Features] */
 // enable using clips to hold shelves together [not implemented]
 clips="no"; // [yes, no]
-// add retaining clip?
-retaining_clip="no"; // [yes, no]
 // add a drawer locking mechanism in the rear?
 rear_lock="no"; // [yes, no]
 /* [Rendering] */
@@ -638,14 +642,6 @@ module tube(od, id, h=1, center=false) {
         
 /* MAIN  */
 
-//color("yellow", .5) 
-//back();
-//half_side_slot();
-//countersink();
-//fhex_hole();
-//rotate([0, 0, 180]) translate([-435 , 198, -12.5+shelf.z]) color("orange", .3) import("Shelf_2U.stl");
-//clip_cut();
-//module clip(ZExtrude, topdia, bottomDiam, spacebetween, Thickness) {
 if (part == "shelf") {
     if (orientation == "viewing") {
         %if (rear_lock == "yes") translate([-shelf.x/2, 0, -shelfCut.z/2]) rear_lock();
@@ -658,7 +654,7 @@ if (part == "shelf") {
         %shelf();
         // front side clips
         reflect(X) {
-            for(k=[0:U-1]) {
+            for(k=[0:U_High-1]) {
                 // right side
                 translate([(shelf.x-clipCut.x/2)/2, 
                     (shelf.y-clipCut.y)/2, 

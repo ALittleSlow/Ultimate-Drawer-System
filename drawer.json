@@ -1,0 +1,28 @@
+{
+    "parameterSets": {
+        "Becky's 1U drawer": {
+            "$fa": "5",
+            "$fs": "1",
+            "U_deep": "1",
+            "U_high": "1",
+            "U_wide": "1",
+            "catchFlange": "10",
+            "cornerR": "4",
+            "drawerUnit": "[120, 120, 19]",
+            "drawer_catch": "yes",
+            "epsilon": "0.01",
+            "label": "[51, 2, 16]",
+            "labelSlot": "[49, 1, 15]",
+            "labelWindow": "[46, 1, 14]",
+            "labels": "no",
+            "pullD": "24.38",
+            "pull_style": "ergonomic",
+            "rearLockSlot": "[26, 3.5, 8]",
+            "rear_lock_slot": "yes",
+            "shelfPadding": "[11, 10, 1]",
+            "shelfUnit": "[131, 130, 30]",
+            "wallThickness": "1"
+        }
+    },
+    "fileFormatVersion": "1"
+}

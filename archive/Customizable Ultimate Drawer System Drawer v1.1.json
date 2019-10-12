@@ -1,0 +1,53 @@
+{
+    "parameterSets": {
+        "0.5x0.5x1 ergo catch slot": {
+            "$fa": "5",
+            "$fs": "1",
+            "U_deep": "0.5",
+            "U_high": "1",
+            "U_wide": "0.5",
+            "catchFlange": "10",
+            "cornerR": "4",
+            "drawerUnit": "[120, 120, 19]",
+            "drawer_catch": "yes",
+            "epsilon": "0.01",
+            "flangeRearOffset": "5",
+            "label": "[51, 2, 16]",
+            "labelSlot": "[49, 1, 15]",
+            "labelWindow": "[46, 1, 14]",
+            "labels": "yes",
+            "pullD": "24.38",
+            "pull_style": "ergonomic",
+            "rearLockSlot": "[26, 3.5, 8]",
+            "rear_lock_slot": "yes",
+            "shelfPadding": "[11, 10, 1]",
+            "shelfUnit": "[131, 130, 30]",
+            "wallThickness": "1"
+        },
+        "0.5x0.5x1 ergo catch noLock": {
+            "$fa": "5",
+            "$fs": "1",
+            "U_deep": "0.5",
+            "U_high": "1",
+            "U_wide": "0.5",
+            "catchFlange": "10",
+            "cornerR": "4",
+            "drawerUnit": "[120, 120, 19]",
+            "drawer_catch": "yes",
+            "epsilon": "0.01",
+            "flangeRearOffset": "5",
+            "label": "[51, 2, 16]",
+            "labelSlot": "[49, 1, 15]",
+            "labelWindow": "[46, 1, 14]",
+            "labels": "yes",
+            "pullD": "24.38",
+            "pull_style": "ergonomic",
+            "rearLockSlot": "[26, 3.5, 8]",
+            "rear_lock_slot": "no",
+            "shelfPadding": "[11, 10, 1]",
+            "shelfUnit": "[131, 130, 30]",
+            "wallThickness": "1"
+        }
+    },
+    "fileFormatVersion": "1"
+}

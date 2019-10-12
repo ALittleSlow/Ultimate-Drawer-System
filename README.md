@@ -50,10 +50,8 @@ Compared to MarcElbichon's version
 
 ## Roadmap
 Planned enhancements include (in no particular order)
-* Snaps to keep drawers closed, and to keep drawers from falling out
 * Drawers with dividers
 * Handles for portable storage units
-* Custom inserts for specialty storage
 * Bumpers for increased ruggedness
 * Sturdier versions of the drawers for increased ruggedness
 * Custom label inserts

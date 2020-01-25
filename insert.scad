@@ -25,14 +25,16 @@
 */
 
 /* [Size] */
-// Outside width in mm (1U drawer is 118 mm inside, 1.5U is 182.5 mm, 2U is 249 mm)
+// Outside width in mm (1U drawer is 118 mm inside, 1.5U is 182.5 mm, 2U is 249 mm). Walls are 1 mm thick.
 Width=59; // [8:0.1:249]
-// Outside depth in mm (1U drawer is 118 mm inside, 1.5U is 182 mm, 2U is 248 mm)
+// Outside depth in mm (1U drawer is 118 mm inside, 1.5U is 182 mm, 2U is 248 mm). Walls are 1 mm thick.
 Depth=59; // [8:0.1:248]
 // Outside height in mm (1U drawer is 18 mm inside, 2U is 38 mm, 3U is 58 mm, etc.)
 Height= 18; // [8:398]
 // This amount is subtracted from each of the six sides to provide some wiggle room. Half your nozzle diameter is a safe place to start if you're not sure.
 Tolerance=0.2; // [0.00:0.02:1.00]
+// Don't print the bottom, just the perinimeter
+Bottomless="no"; //[yes, no]
 
 /* [Island] */
 Island_Shape="none"; //[none,round,square]
@@ -40,12 +42,13 @@ Island_Shape="none"; //[none,round,square]
 Island = 27;
 Island_Offset = 0;
 
-/* [Pliers] */
-// Set the outside width of a divider conforming to a general plier handle. 0 to disable.
-Plier_Width=0;
-// Set the outside height of a divider conforming to a general plier handle. 
-Plier_Height=0;
-Plier_Offset=0;
+/* [Chevron] */
+// Set the outside width of a divider in the shape of an inverted "V". 0 to disable.
+Chevron_Width=0;
+// Set the outside height of a divider in the shape of an inverted "V" 
+Chevron_Height=0;
+// Distance above center. Negative to go below
+Chevron_Offset=0;
 
 /* [Hidden] */
 drawerWallThickness = 1; // assumed
@@ -95,12 +98,17 @@ module insert(size) {
         cut = [size.x - insertWallThickness*2, 
             size.y - insertWallThickness*2, 
             size.z - insertWallThickness];
+        bottomCut = [size.x - insertCornerRadius*2, size.y - insertCornerRadius*2, insertWallThickness + epsilon*2];
+        
         translate([0, 0, insideRadius + insertWallThickness - epsilon]) 
             linear_extrude(cut.z - insideRadius + epsilon * 2) 
             roundtangle([cut.x, cut.y], insideRadius );
         // fillet cut
        translate([0, 0, insideRadius + insertWallThickness]) 
             roundtangle3d([cut.x, cut.y], insideRadius);
+       if (Bottomless=="yes") {
+            translate([0, 0, bottomCut.z/2 - epsilon]) cube(bottomCut, center=true);
+        }
     }
      
     difference() {
@@ -155,7 +163,7 @@ module island(size) {
     
 }
 
-module pliers(width, height, offset) {
+module chevron(width, height, offset) {
     step=width/20;
     yFactor= height/y(0);
 //    Height=19;
@@ -210,7 +218,7 @@ module roundtangle3d(size, r) {
     union() {
         insert(insertSize);
         if (Island_Shape != "none") island(Island);
-        if (Plier_Width != 0) pliers(Plier_Width, Plier_Height, Plier_Offset);
+        if (Chevron_Width != 0) chevron(Chevron_Width, Chevron_Height, Chevron_Offset);
     }
 //    cube(100);
 //}

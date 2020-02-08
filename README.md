@@ -31,7 +31,8 @@ Inside dimensions of 1.5U deep drawer =195-10-2 = 183
 Inside dimensions of 2 deep drawer: 260-10-2 = 247
 I think the least common denominator of those widths is 0.5 mm, and 1 mm for depth. 1 mm for height also, since heights are 19, 39, 59, etc.
 
-
+## Printing
+Because it has all the features, is small, and is still usable, [this is a good test model](https://github.com/ALittleSlow/Ultimate-Drawer-System/blob/master/examples/shelf%200.5Wx0.5Dx2H%20clips%20noLock%20rearWeak%20frontStrong%20tol0.4.stl).
 
 ## Contributors and Contributing
 This is an OpenSCAD copy then enchancement of [The Ultimate Drawer System by MarcElbichon](https://www.thingiverse.com/thing:2302575) and others to come. Contributors are welcome.

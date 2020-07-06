@@ -155,8 +155,6 @@ Z = [0, 0, 1]; // y-coordinate unit vector
 $fa=1;
 $fs=.4;
 
-
-
 // the spacing between drawings is 20, or unit.z + 1. so a 1U drawer is 19, a 2U drawer is 39, etc.
 function zU(u) = slotSpacing * u - 1;
 
@@ -210,7 +208,7 @@ module foot() {
 
 module shelf() {
     topSlotSpacing = 20.17; // measured from the original
-    slot_w = 1.5;
+    slot_w = 1.5 + tolerance; // slot width
     rearSnapStart = catch.x - catch.y; // distance from front
     snapMaxDepth =  shelf.x - rearSnapStart - backThickness;
     rearSnapDepth = Rear_Drawer_Snap=="weak" ? snapMaxDepth : 
@@ -220,7 +218,7 @@ module shelf() {
                 Front_Drawer_Snap== "medium" ? wallThickness*3 :
                 wallThickness * 2;
     snapWidth = wallThickness - slotDepth + 0.2; // 0.2 is a fudge factor to remove some artifacts
-    snapHeight = slot_w * 4; 
+    snapHeight = 6; 
     rearSnapHeadSize = flange.y * (Rear_Drawer_Snap == "weak" ? 0.2 : 0.4);
     frontSnapHeadSize = flange.y * 0.4;
     echo(rearSnapDepth, snapWidth, snapHeight);
@@ -354,7 +352,7 @@ module shelf() {
             for (k=[1:U_High-1]) {
                 translate([epsilon, -w/2+epsilon, -shelfCut.z/2 + slotBottomWidth + slotSpacing*k] )          
                     reflect(Z)
-                        half_side_slot();
+                   #     half_side_slot();
             }
             for (k=[0:U_High-1]) {
                 snaps(k);

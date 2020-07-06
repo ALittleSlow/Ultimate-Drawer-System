@@ -30,7 +30,7 @@
 
 /* [Size] */
 // units wide (actual drawer width is 131*U_wide - 10)
-U_wide=1; // [0.5, 1, 1.5]
+U_wide=1; // [0.5, 1, 1.5, 2]
 // units deep (actual drawer depth is 130*U_deep - 10)
 U_deep=1; // [0.5, 1, 1.5]
 // units high (actual drawer height is 20*U_high - 1)
